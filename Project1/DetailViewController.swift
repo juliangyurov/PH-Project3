@@ -56,12 +56,15 @@ class DetailViewController: UIViewController {
             
             let attrs: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: 36),
-                .paragraphStyle: paragraphStyle
+                .paragraphStyle: paragraphStyle,
+                .foregroundColor: UIColor.red,
+                .backgroundColor: UIColor.white
+                    
             ]
             
             let string = "From Storm Viewer"
             let attributedString = NSAttributedString(string: string, attributes: attrs)
-            attributedString.draw(with: CGRect(x: 32, y: 32, width: 448, height: 448),
+            attributedString.draw(with: CGRect(x: 32, y: 32, width: size.width-32, height: size.height-32),
                                   options: .usesLineFragmentOrigin, context: nil)
         }
         image = imageTemp.jpegData(compressionQuality: 1.0)!
